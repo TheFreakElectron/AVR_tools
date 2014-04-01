@@ -24,7 +24,7 @@ return 0;
 
 /*
 
-To compile with GCC: 
+To compile: 
 gcc UBRR_VALUE_CALCULATOR.C -o ubrr_value_calculator
 
 To run:

@@ -2,21 +2,32 @@
 
 int main()
 {
-  float baud_rate;
+  float target_baud_rate;
   int clock_freq;
   int UBRR;
   float error;
+  int mode;
+  float baud_rate;
+  mode = 16;
 
-  printf("baud rate: ");
-  scanf("%f", &baud_rate);
+  printf("select mode\n1. Asynchronous Normal Mode\n2. Asynchronous Double speed\n3. Synchronous Master Mode: ");
+  scanf("%d", &mode);
+  if(mode == 1)mode = 16;
+  if(mode == 2)mode = 8;
+  if(mode == 3)mode = 2;
+  printf("target baud rate: ");
+  scanf("%f", &target_baud_rate);
   printf("clock frequency (Hertz): ");
   scanf("%d", &clock_freq);
-  baud_rate = 16*baud_rate;
-  baud_rate = clock_freq / baud_rate -1;
-  UBRR = baud_rate;
+  UBRR = mode*target_baud_rate;
+  UBRR = clock_freq / UBRR -1;
   printf("UBRR = %d\n",UBRR);
-  error = UBRR - baud_rate;
-  error = error/baud_rate*100;
+  baud_rate = UBRR + 1;
+  baud_rate = mode*baud_rate;
+  baud_rate = clock_freq/baud_rate;
+  printf("baud rate = %f\n",baud_rate);
+  error = baud_rate / target_baud_rate -1;
+  error = error*100;
   printf("error = %f%%\n",error);
 
 return 0;

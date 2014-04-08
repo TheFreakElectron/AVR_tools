@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int main()
+{
+  float i;
+  i = 0.1 + 0.2;
+  printf("%f"\n,i);
+  return 0;
+}
+
+
+/*
+int main()   
+{   
+        float f=0.0;  
+        int i;  
+
+        for(i=0;i<10;i++) 
+		printf("%ld\n",f);
+                f = f + 0.1;
+                 
+
+        if(f == 1.0f) 
+                printf("f is 1.0 \n"); 
+        else 
+                printf("f is NOT 1.0\n"); 
+
+        return 0; 
+} 
+*/

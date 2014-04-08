@@ -10,7 +10,10 @@ int main()
   float baud_rate;
   mode = 16;
 
-  printf("select mode\n1. Asynchronous Normal Mode\n2. Asynchronous Double speed\n3. Synchronous Master Mode: ");
+  printf("select mode\n")
+  printf("1. Asynchronous Normal Mode\n")
+  printf("2. Asynchronous Double speed\n")
+  printf("3. Synchronous Master Mode: ");
   scanf("%d", &mode);
   if(mode == 1)mode = 16;
   if(mode == 2)mode = 8;
